@@ -1,0 +1,135 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background: #b4c4e4;
+    display: grid;
+    place-items: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+main{
+    width: 100%;
+    max-width: 600px;
+}
+
+.bg-container{
+    background: url('https://image.freepik.com/free-vector/background-abstract-pixel-rain_23-2148380709.jpg') center/cover;
+
+    margin: 0 2em;
+    padding: 0.67em 0.67em 0;
+    border-radius: 1.2em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+header h1{
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 4px;
+}
+
+section{
+    padding: 0.67em 30%;
+
+    display: grid;
+    place-items: center;
+}
+section img{
+    width: 100%;
+    height: auto;
+}
+
+.counter{grid-area: counter;}
+.bar{grid-area: bar;}
+.btn-group{grid-area: btn-group;}
+
+.control{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "counter"
+    "bar"
+    "btn-group";
+    place-items: center;
+}
+
+.counter{
+    display: none;
+}
+
+.bar{
+    border-bottom: 2px solid #d1cfcf;
+    width: 70%;
+    position: relative;
+}
+
+.progress{
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    background: linear-gradient(to left, #11998e , #38ef7d);
+    box-shadow: 5px 0 10px #15e28a;
+    transition: .5s ease;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    margin: .8rem;
+}
+
+.btn-group button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    background-color: #ececec;
+}
+
+button:disabled{
+    background: #333;
+    border: 2px solid #ececec;
+}
+
+.btn-group button:hover{
+    color: #5bc0de;
+}
+
+.play-pause .fa-play{
+    display: none;
+}
+
+@media (min-width: 500px) {
+    header h1{
+        font-size: 1.4rem;
+    }
+
+    .control{
+        margin-top: 1rem;
+        grid-template-columns: 20% 80%;
+        grid-template-areas: 
+        "counter bar"
+        "counter btn-group";
+    }
+
+    .counter{
+        display: block;
+        color: #fff;
+    }
+}
